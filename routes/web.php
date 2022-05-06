@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CategoryController; 
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
+
+// getCategory(8)
+
+Route::get('/test', [CategoryController::class, 'test'])->name('test');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

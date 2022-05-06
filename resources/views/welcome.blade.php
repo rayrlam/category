@@ -2,7 +2,7 @@
     <x-slot name="header">
         <div class="flex justify-center sm:justify-start sm:pt-0">
             <h1 class="">
-                {{ __('Developer Task – Category breadcrumb') }}    
+                {{ __('Developer Task – Category Breadcrumb') }}    
             </h1>
         </div>
     </x-slot>
@@ -12,7 +12,7 @@
         <div class="ml-4 text-xl mt-4 font-semibold text-gray-900 dark:text-white">
             <p>
             Imagine we have a database table of category information as per the below. This shows categories in 
-a hierarchical structure indicated by a parent_id. I.e. a category with a parent_id of 1 is a subcategory of Clothing, whereas a category with a parent_id of 5 is a sub-category of Men. Any 
+a hierarchical structure indicated by a parent_id. I.e. a category with a parent_id of 1 is a sub-category of Clothing, whereas a category with a parent_id of 5 is a sub-category of Men. Any 
 category with a sub-category of 0 is a top level category.
             </p>
         </div>
