@@ -18,7 +18,7 @@ class CategorySeeder extends Seeder
         DB::table('users')->insert([
             'name' => 'ray',
             'email' => 'rayrlam@yahoo.com.hk',
-            'password' => '$2y$10$HkwD/XaSY3Yn3RvjRpoo1O82QfOR8IAWebTXenk.LJROG9HCwNNu.',
+            'password' => '$2y$10$Xbez2AoxVZCltbEWAdioVuJxA5kpTfqRaWoLTQJCZwqULYWnttWsS',
             ]
         );
 
