@@ -10,4 +10,14 @@ class CategoryRepository
         $category = Category::findOrFail($id);
         return ['id'=>$category->id, 'parent_id'=>$category->parent_id, 'name'=>$category->name];
     }
+
+    public function categories($id): object
+    {
+        return Category::where('parent_id', $id)->get();
+    }
+
+    public function list(): object
+    {
+        return Category::all();
+    }
 } 

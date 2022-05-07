@@ -57,14 +57,14 @@
         <div class="relative flex items-top justify-center  bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
         
             <div class="max-w-6xl  px-6">
+                <div style="padding-top:8px;">
+                    <a href="{{ url('/') }}" class="px-6 text-sm text-gray-700 dark:text-gray-500 underline">Welcome</a>
 
-          
+                    <a href="{{ url('/categories/0') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Categories</a>
 
-                @if (Route::has('login'))
-                    <div class="">
+                    <a href="{{ route('breadcrumb') }}" class="px-6 text-sm text-gray-700 dark:text-gray-500 underline">Breadcrumb</a>
 
-                            <a href="{{ url('/') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Welcome</a>
-
+                    @if (false && Route::has('login'))
                         @auth
                             <a href="{{ url('/dashboard') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
                         @else
@@ -74,9 +74,9 @@
                                 <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
                             @endif
                         @endauth
-                    </div>
-                @endif
-
+                        
+                    @endif
+                </div>
                
                 
                 <div class="flex justify-center sm:justify-start sm:pt-0">

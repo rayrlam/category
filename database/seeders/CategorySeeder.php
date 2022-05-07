@@ -68,6 +68,5 @@ class CategorySeeder extends Seeder
             'parent_id' => 5,
             ]
         );
-
     }
 }

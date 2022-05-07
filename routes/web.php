@@ -14,14 +14,13 @@ use App\Http\Controllers\CategoryController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+Route::get('/', [CategoryController::class, 'welcome'])->name('welcome');
 
-// getCategory(8)
+Route::get('/categories/{id}', [CategoryController::class, 'categories']);
 
-Route::get('/test', [CategoryController::class, 'test'])->name('test');
+Route::get('/breadcrumb', [CategoryController::class, 'breadcrumb'])->name('breadcrumb');
 
+Route::post('/breadcrumbs', [CategoryController::class, 'breadcrumbs'])->name('breadcrumbs');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
