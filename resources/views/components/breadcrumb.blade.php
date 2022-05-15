@@ -1,11 +1,11 @@
 @if (isset($breadcrumbs) && count($breadcrumbs))
     <div class="container mx-auto">
-        <div class="p-4 rounded flex flex-wrap bg-gray-300 text-sm text-gray-800">
+        <div class="p-4 rounded flex flex-wrap bg-gray-100 text-sm text-gray-800">
             @foreach ($breadcrumbs as $breadcrumb)
 
                 @if (isset($breadcrumb['url']) && $breadcrumb['url'])
                     <div>
-                        <a href="{{ $breadcrumb['url'] }}" class="text-blue-600 hover:text-blue-900 hover:underline focus:text-blue-900 focus:underline">
+                        <a href="{{ $breadcrumb['url'] }}" class="text-green-500 hover:text-blue-500 hover:underline focus:text-blue-900 focus:underline">
                             {{ $breadcrumb['name'] }}
                         </a>
                     </div>

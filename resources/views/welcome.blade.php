@@ -1,14 +1,6 @@
 <x-category-layout>
-    <x-slot name="header">
-        <div class="flex justify-center sm:justify-start sm:pt-0">
-            <h1 class="">
-                {{ __('Developer Task – Category Breadcrumb') }}    
-            </h1>
-        </div>
-    </x-slot>
-
-    <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-l">
-        <div class="ml-4 text-xl mt-4 font-semibold text-gray-900 dark:text-white">
+    <div class="p-8 lg:border-2  lg:border-zinc-300">
+        <div class="text-xl mt-4  text-gray-900 dark:text-white">
             <p>
                 Imagine we have a database table of category information as per the below. This shows categories in 
                 a hierarchical structure indicated by a parent_id. I.e. a category with a parent_id of 1 is a sub-category of Clothing, whereas a category with a parent_id of 5 is a sub-category of Men. Any 
@@ -16,7 +8,7 @@
             </p>
         </div>
         <div class="mt-4">
-            <table id="items" style="margin:auto;width:97%">
+            <table id="items">
                 <tr>
                     <th>id</th>
                     <th>parent_id</th>
@@ -33,24 +25,24 @@
         </div>
         
         <div class="mt-4">
-            <div class="ml-4 text-xl mt-4 font-semibold text-gray-900 dark:text-white">
+            <div class="text-xl mt-4  text-gray-900 dark:text-white">
                 <p> 
                     We would like you to create a function that produces a category breadcrumb. This function should 
                     use parameters for the required category id and the separator.
                 </p>
-                <p>
+                <p class="mt-4 mb-4">
                     For example. If I supplied 8 as the category id and ‘>’ as the separator I would expect the result to be:
                 </p>
-                <p>  
+                <p class="mb-4">  
                     <x-breadcrumb :breadcrumbs="$breadcrumbs['0']" /> 
                 </p>
-                <p>
+                <p class="mb-4 mt-4">
                     If I supplied 5 as the category id and ‘/’ as the separator I would expect the result to be:
                 </p>
-                <p>
+                <p class="mb-4">  
                     <x-breadcrumb :breadcrumbs="$breadcrumbs['1']" />
                 </p>
-                <p>
+                <p class="mb-4 mt-4">
                     For the purposes of this exercise assume you have a function called getCategory($id) available to 
                     supply you with an array of the category values when the category id is passed in.
                 </p>
@@ -69,77 +61,104 @@ Array(
             </div>
         </div>
         <div class="mt-4">
-            <hr style=" border: 2px solid #04aa6d;" />
+            <hr class="hr" />
         </div>
-        <div class="ml-4 text-xl mt-4 font-semibold text-gray-900 dark:text-white">
-            <h2 class="text-xl">Setup Information</h2>
+        <div class="text-xl mt-4  text-gray-900 dark:text-white">
+            <h2 class="text-xl font-bold">Setup Information</h2>
         </div>
-        <div class="ml-4 text-xl mt-4 font-semibold text-gray-900 dark:text-white">
+        <div class="text-xl mt-4  text-gray-900 dark:text-white">
             <ul>
-                <li>Laravel Installation - <a href="https://laravel.com/docs/9.x/installation" target="_blank">https://laravel.com/docs/9.x/installation</a></li>
-                <li>Create Database category</li>
-                <li>Edit .env at DB_DATABASE, DB_USERNAME & DB_PASSWORD for database connection</li>
-                <li>Run Laravel Command
+                <li class="ml-4">Laravel Installation - <a href="https://laravel.com/docs/9.x/installation" target="_blank" class="text-green-500 hover:text-blue-500">https://laravel.com/docs/9.x/installation</a></li>
+                <li class="ml-4">Rename .env.example to .env</li>
+                <li class="ml-4">
+                    Create Database laravel
+                </li>
+                <li>
+                    <div class="mt-4 bg-blue-800 text-gray-100 p-6 rounded-lg">
+                        <div class="text-gray-400 mb-2">
+                            /*<br>
+                            ** Create by MySQL Comman<br>
+                            */
+                        </div>
+                        CREATE DATABASE LARAVEL;        
+                    </div>    
+                </li>
+                <li class="ml-4 mt-4">Run Laravel Command</li>
+                <li>    
                     <ul>
                         <li>
-                            php artisan migrate
-                            <ul>
-                                <li>Create all tables for this app</li>
-                            </ul>
-                        </li>
-                        <li class="mt-4">
-                            php artisan db:seed --class=CategorySeeder
-                            <ul>
-                                <li>Create the dumpy data for this app</li>
-                            </ul>    
-                        </li>
-                        <li class="mt-4">
-                            php artisan dusk
-                            <ul>
-                                <li>Run the CategoryTest to check for errors</li>
-                            </ul>
+                            <div class="mt-4 bg-blue-800 text-gray-100 p-6 rounded-lg">
+                                <div class="text-gray-400 mb-2">
+                                    /*<br>
+                                    ** Create all tables for this app<br>
+                                    */
+                                </div>
+                                php artisan migrate        
+                         
+                            
+                                <div class="text-gray-400 mt-4 mb-2">
+                                    /*<br>
+                                    ** Create the dumpy data for this app<br>
+                                    */
+                                </div>
+                                php artisan db:seed --class=DataSeeder     
+             
+                                <div class="text-gray-400 mt-4 mb-2">
+                                    /*<br>
+                                    ** Run test to check for errors<br>
+                                    */
+                                </div>
+                                php artisan test    
+                           
+                                <div class="text-gray-400 mt-4 mb-2">
+                                    /*<br>
+                                    ** Running local server<br>
+                                    */
+                                </div>
+                                php artisan serve        
+                            </div>
                         </li>
                     </ul>
                 </li>
-                <li style="margin-top:20px">
-                    Files
+                <li class="mt-4">
+                    Main Files
+                </li>    
+                <li class="text-indigo-700">App\Http\Controllers</li>
+                <li class="ml-4 pb-4" title="App\Http\Controllers\CategoryController">CategoryController</li>
+                <li class="text-indigo-700">App\Repositories</li>
+                <li class="ml-4 pb-4" title="App\Repositories\CategoryRepository">CategoryRepository</li>
+                <li class="text-indigo-700">App\Helpers</li>
+                <li class="ml-4 pb-4" title="App\Helpers\BreadcrumbHelper">BreadcrumbHelper</li>
+                <li class="text-indigo-700">Resources\views\components</li>
+                <li class="ml-4 pb-4" title="Resources\views\components\breadcrumb">breadcrumb</li>
+                <li class="text-indigo-700">App\database\seeders</li>
+                <li class="ml-4 pb-4" title="App\database\seeders\DataSeeder">DataSeeder</li>
+                <li class="text-indigo-700">Tests\Browser</li>
+                <li class="ml-4 pb-4" title="Tests\Browser\CategoryTest">CategoryTest</li>
+                <li class="text-indigo-700">App\Models</li>
+                <li class="ml-4 pb-4" title=" App\Models\Category">Category</li>
+
+
                     <ul>
-                        <li>
-                            Controller: App\Http\Controllers\CategoryController
-                        </li>
-                        <li>
-                            Repository: App\Repositories\CategoryRepository
-                        </li>
-                        <li>
-                            Helpers: App\Helpers\BreadcrumbHelper
-                        </li>
-                        <li>
-                            View Components: Resources\views\components\breadcrumb
-                        </li>
-                        <li>
-                            Seeders: App\database\seeders\CategorySeeder
-                        </li>
-                        <li>
-                            Dusk Tests: Tests\Browser\CategoryTest
-                        </li>
-                        <li>
-                            Models: App\Models\Category
-                        </li>
+              
+        
+                 
+         
                         <li>
                             Views
                             <ul>
-                                <li>
-                                    <a href="{{ route('welcome') }}">
+                                <li class="ml-4">
+                                    <a href="{{ route('welcome') }}" class="text-green-500 hover:text-blue-500">
                                         Welcome
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="{{ route('breadcrumb') }}">
+                                <li class="ml-4">
+                                    <a href="{{ route('breadcrumb') }}" class="text-green-500 hover:text-blue-500">
                                         Breadcrumb
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="{{ url('categories/0') }}">
+                                <li class="ml-4">
+                                    <a href="{{ url('categories/0') }}" class="text-green-500 hover:text-blue-500">
                                         Categories
                                     </a>
                                 </li>
