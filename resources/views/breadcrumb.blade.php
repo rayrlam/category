@@ -1,12 +1,9 @@
 <x-category-layout>
-    <div class="p-8 lg:border-2  lg:border-zinc-300">
+    <div class="p-8 w-full bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
         <div class="flex" style="justify-content:space-between; align-items:baseline">
             <h2 class="font-bold lg:text-3xl text-2xl mt-4 mb-4">
                 {{ __('Breadcrumb') }} 
             </h2>
-            <div class="mt-4 mb-4">
-                <a href="{{url('categories/0')}}" class="text-green-500 hover:text-blue-500">>> Categories</a>
-            </div>
         </div>    
         <div class="mt-4">
             <form method="post" action="{{route('breadcrumbs')}}">
@@ -30,7 +27,7 @@
                         </div>
 
                     <div class="flex items-center justify-end px-4 py-3 text-right sm:px-6">
-                        <button style="padding:8px 20px; background-color:green; color:white" type="submit">
+                        <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center" type="submit">
                             Create
                         </button>
                     </div>

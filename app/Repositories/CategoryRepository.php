@@ -16,6 +16,11 @@ class CategoryRepository
         return Category::where('parent_id', $id)->get();
     }
 
+    static public function pid(): object
+    {
+        return Category::select('parent_id')->groupBy('parent_id')->get();
+    }
+
     static public function list(): object
     {
         return Category::all();

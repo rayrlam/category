@@ -7,7 +7,7 @@
         </div>
     </x-slot>
 
-    <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-l">
+    <div class="p-8 w-full bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
         <div class="mt-4">
             @if(isset($breadcrumbs))
                 <x-breadcrumb :breadcrumbs="$breadcrumbs" />
