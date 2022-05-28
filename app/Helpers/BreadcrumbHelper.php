@@ -5,7 +5,7 @@ use App\Repositories\CategoryRepository;
 
 class BreadcrumbHelper
 {
-    static private $path = 'categories';
+    static private $path = 'category';
 
     static public function breadcrumb(int $id, string $sep = ">", bool $withUrl = true): array
     {

@@ -8,17 +8,26 @@ use App\Helpers\BreadcrumbHelper;
 class CategoryController extends Controller
 {
     public function welcome()
-    {
+    {   
         $list = CategoryRepository::list();
         $b8 = BreadcrumbHelper::breadcrumb(8);
         $b5 = BreadcrumbHelper::breadcrumb(5, "/");
         return view('welcome', ['breadcrumbs'=>[$b8,$b5], 'list'=>$list]);
     }
 
-    public function categories($id)
+    public function category(Request $request, $id){
+        return $this->categories($request, $id);
+    }
+
+    public function categories(Request $request, $id = 0)
     {
-        $categories = CategoryRepository::categories($id >= 0 ? $id : 0);
-        return view('categories', compact(['categories']));
+        $id = $id === 0 ? 0 : $id;
+        if($request->isMethod('post')) {
+            $id = $request->input('id');
+        }
+        $categories = CategoryRepository::categories($id);
+        $pid = CategoryRepository::pid();
+        return view('categories', compact(['categories', 'id', 'pid']));
     }
 
     public function breadcrumb()

@@ -16,7 +16,9 @@ use App\Http\Controllers\CategoryController;
 
 Route::get('/', [CategoryController::class, 'welcome'])->name('welcome');
 
-Route::get('/categories/{id}', [CategoryController::class, 'categories']);
+Route::match(['get', 'post'], '/categories', [CategoryController::class,'categories'])->name('categories');
+
+Route::get('/category/{id}', [CategoryController::class, 'category']);
 
 Route::get('/breadcrumb', [CategoryController::class, 'breadcrumb'])->name('breadcrumb');
 
